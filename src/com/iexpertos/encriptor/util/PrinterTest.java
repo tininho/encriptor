@@ -5,10 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class PrinterTest {
-
+	
 	@Test
 	public void shouldGetArrayOfTwoWords() {
-		fail("Not yet implemented");
+		Printer printer = new Printer();
+		assertTrue(printer.getWords("a b").length==2);
 	}
 
 }
