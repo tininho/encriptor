@@ -1,6 +1,7 @@
 package com.iexpertos.encriptor;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import java.io.PrintStream;
 
@@ -16,6 +17,11 @@ public class EncriptorRunnerCharacterizationTest {
 		System.setOut(new PrintStream(checker));
 		Main.main(null);
 		assertNotNull(checker.getChecksumValue());
+	}
+	
+	@Test
+	public void checkingMainOutput(){
+		fail("not yet implemented");
 	}
 
 }
