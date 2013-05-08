@@ -9,11 +9,6 @@ public class Encriptor {
 		checkingIfWordContainsSingleBlankSpace(word);
 		return this.cryptSentence(word);
 	}
-
-	private void checkingIfWordContainsSingleBlankSpace(String word) {
-		if (word.contains(" "))
-			throw new InvalidParameterException();
-	}
 	
 	public String cryptWordToNumbers(String word)
 	{
@@ -64,18 +59,9 @@ public class Encriptor {
 		return newWord;
 	}
 	
-	public String[] getWords(String sentence)
-	{
-		return sentence.split(" ");
-	}
-	
-	public void printWords(String sentence)
-	{
-		String[] words = getWords(sentence);
-		for (String word : words)
-		{
-			System.out.print("<" + word + ">");
-		}
+	private void checkingIfWordContainsSingleBlankSpace(String word) {
+		if (word.contains(" "))
+			throw new InvalidParameterException();
 	}
 	
 }

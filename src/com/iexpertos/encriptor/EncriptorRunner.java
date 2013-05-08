@@ -1,5 +1,7 @@
 package com.iexpertos.encriptor;
 
+import com.iexpertos.encriptor.util.Printer;
+
 public class EncriptorRunner {
 
 	/**
@@ -7,11 +9,12 @@ public class EncriptorRunner {
 	 */
 	public static void main(String[] args) {
 		Encriptor encriptor = new Encriptor();
+		Printer printer = new Printer();
 		System.out.println("1:" + encriptor.cryptWord("hola"));
 		System.out.println("2:" + encriptor.cryptWordToNumbers("hola"));
 		System.out.println("3:" + encriptor.cryptWord("hola", "o"));
 		System.out.println("4:" + encriptor.cryptSentence("hola, que tal estas?"));
-		encriptor.printWords("hola, que tal estas?");
+		printer.printWords("hola, que tal estas?");
 
 	}
 
