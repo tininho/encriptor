@@ -21,12 +21,6 @@ public class EncriptorRunnerCharacterizationTest {
 	}
 	
 	@Test
-	public void shouldExecuteEncriptorRunnerAndOutputNotNull() {
-		EncriptorRunner.main(null);
-		assertNotNull(checker.getChecksumValue());
-	}
-	
-	@Test
 	public void checkingEncriptorRunnerOutput(){
 		EncriptorRunner.main(null);
 		assertEquals(1806523983L, checker.getChecksumValue());
