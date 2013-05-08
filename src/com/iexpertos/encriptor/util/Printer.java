@@ -15,5 +15,9 @@ public class Printer {
 			System.out.print("<" + word + ">");
 		}
 	}
+
+	public void printSentence(String sentence) {
+		System.out.println(sentence);
+	}
 	
 }

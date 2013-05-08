@@ -25,7 +25,7 @@ public class PrinterTest {
 		System.setOut(new PrintStream(checker));
 		Printer printer = new Printer();
 		printer.printSentence("a b");
-		assertEquals(3439837024L, checker.getChecksumValue());
+		assertEquals(3697970883L, checker.getChecksumValue());
 	}
 	
 }
