@@ -34,19 +34,25 @@ public class Encriptor {
 		
 		char[] wordArray = word.toCharArray();
 		char[] charsToReplaceArray = charsToReplace.toCharArray();
-		char[] encryptedWord = wordArray.clone();
+		char[] encryptedWordArray = wordArray.clone();
 		for (int i = 0; i < wordArray.length; i++)
 		{
-			for (int j = 0; j < charsToReplaceArray.length; j++)
+			replacingWordCharacters(wordArray, charsToReplaceArray,
+					encryptedWordArray, i);
+		}
+		return String.valueOf(encryptedWordArray);
+	}
+
+	private void replacingWordCharacters(char[] wordArray,
+			char[] charsToReplaceArray, char[] encryptedWord, int i) {
+		for (int j = 0; j < charsToReplaceArray.length; j++)
+		{
+			if (charsToReplaceArray[j] == wordArray[i])
 			{
-				if (charsToReplaceArray[j] == wordArray[i])
-				{
-					int charValue = wordArray[i];
-					encryptedWord[i] = (char)( charValue + 2);		
-				}
+				int charValue = wordArray[i];
+				encryptedWord[i] = (char)( charValue + 2);		
 			}
 		}
-		return String.valueOf(encryptedWord);
 	}
 	
 	public String cryptSentence(String sentence)
