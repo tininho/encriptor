@@ -1,6 +1,7 @@
 package com.iexpertos.encriptor.util;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.PrintStream;
 
@@ -16,6 +17,11 @@ public class PrinterTest {
 		Printer printer = new Printer();
 		printer.printWordsBetweenLowerThanAndGreaterThanSymbols("a b");
 		assertEquals(3439837024L, checker.getChecksumValue());
+	}
+	
+	@Test
+	public void shouldPrintSentence(){
+		fail("test not yet implemented");
 	}
 	
 }
