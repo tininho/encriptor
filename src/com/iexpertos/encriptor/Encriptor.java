@@ -6,8 +6,7 @@ public class Encriptor {
 	
 	public String cryptWord(String word)
 	{
-		if (word.contains(" "))
-			throw new InvalidParameterException();
+		checkingIfWordContainsSingleBlankSpace(word);
 		
 		char[] wordArray = word.toCharArray();
 		String newWord = "";
@@ -19,11 +18,15 @@ public class Encriptor {
 		
 		return newWord;
 	}
+
+	private void checkingIfWordContainsSingleBlankSpace(String word) {
+		if (word.contains(" "))
+			throw new InvalidParameterException();
+	}
 	
 	public String cryptWordToNumbers(String word)
 	{
-		if (word.contains(" "))
-			throw new InvalidParameterException();
+		checkingIfWordContainsSingleBlankSpace(word);
 		
 		char[] wordArray = word.toCharArray();
 		String newWord = "";
@@ -38,8 +41,7 @@ public class Encriptor {
 
 	public String cryptWord(String word, String charsToReplace)
 	{
-		if (word.contains(" "))
-			throw new InvalidParameterException();
+		checkingIfWordContainsSingleBlankSpace(word);
 		
 		char[] wordArray = word.toCharArray();
 		char[] replacement = charsToReplace.toCharArray();
