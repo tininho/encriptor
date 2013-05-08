@@ -7,7 +7,7 @@ public class Printer {
 		return sentence.split(" ");
 	}
 	
-	public void printWords(String sentence)
+	public void printWordsBetweenLowerThanAndGreaterThanSymbols(String sentence)
 	{
 		String[] words = getWords(sentence);
 		for (String word : words)
