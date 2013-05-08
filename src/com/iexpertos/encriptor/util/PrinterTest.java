@@ -21,7 +21,11 @@ public class PrinterTest {
 	
 	@Test
 	public void shouldPrintSentence(){
-		fail("test not yet implemented");
+		Checker checker = new Checker();
+		System.setOut(new PrintStream(checker));
+		Printer printer = new Printer();
+		printer.printSentence("a b");
+		assertEquals(3439837024L, checker.getChecksumValue());
 	}
 	
 }
