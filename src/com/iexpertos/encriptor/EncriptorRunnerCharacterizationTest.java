@@ -12,7 +12,7 @@ import com.iexpertos.encriptor.util.Checker;
 public class EncriptorRunnerCharacterizationTest {
 	
 	@Test
-	public void shouldExecuteMainEncriptor() {
+	public void shouldExecuteEncriptorRunnerAndOutputNotNull() {
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
 		EncriptorRunner.main(null);
@@ -20,7 +20,7 @@ public class EncriptorRunnerCharacterizationTest {
 	}
 	
 	@Test
-	public void checkingMainOutput(){
+	public void checkingEncriptorRunnerOutput(){
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
 		EncriptorRunner.main(null);
