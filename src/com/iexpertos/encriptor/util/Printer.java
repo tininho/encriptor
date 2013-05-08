@@ -2,7 +2,7 @@ package com.iexpertos.encriptor.util;
 
 public class Printer {
 
-	public String[] getWords(String sentence)
+	private String[] getWords(String sentence)
 	{
 		return sentence.split(" ");
 	}
