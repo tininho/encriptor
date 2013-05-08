@@ -5,24 +5,29 @@ import static org.junit.Assert.assertNotNull;
 
 import java.io.PrintStream;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.iexpertos.encriptor.util.Checker;
 
 public class EncriptorRunnerCharacterizationTest {
 	
+	Checker checker;
+	
+	@Before
+	public void initialization(){
+		checker = new Checker();
+		System.setOut(new PrintStream(checker));
+	}
+	
 	@Test
 	public void shouldExecuteEncriptorRunnerAndOutputNotNull() {
-		Checker checker = new Checker();
-		System.setOut(new PrintStream(checker));
 		EncriptorRunner.main(null);
 		assertNotNull(checker.getChecksumValue());
 	}
 	
 	@Test
 	public void checkingEncriptorRunnerOutput(){
-		Checker checker = new Checker();
-		System.setOut(new PrintStream(checker));
 		EncriptorRunner.main(null);
 		assertEquals(1806523983L, checker.getChecksumValue());
 	}
