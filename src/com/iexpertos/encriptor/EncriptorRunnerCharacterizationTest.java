@@ -2,7 +2,6 @@ package com.iexpertos.encriptor;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
 
 import java.io.PrintStream;
 
@@ -25,7 +24,7 @@ public class EncriptorRunnerCharacterizationTest {
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
 		Main.main(null);
-		assertEquals(0L, checker.getChecksumValue());
+		assertEquals(1806523983L, checker.getChecksumValue());
 	}
 
 }
