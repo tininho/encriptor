@@ -25,7 +25,7 @@ public class Encriptor {
 		return newWord;
 	}
 
-	public String cryptWord(String word, String charsToReplace)
+	public String cryptWordReplacingChars(String word, String charsToReplace)
 	{
 		checkingIfWordContainsSingleBlankSpace(word);
 		
