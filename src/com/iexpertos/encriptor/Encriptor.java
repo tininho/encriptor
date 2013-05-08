@@ -4,6 +4,9 @@ import java.security.InvalidParameterException;
 
 public class Encriptor {
 	
+	private static final String EMPTY_SPACE = "";
+	private static final String BLANK_SPACE = " ";
+
 	public String cryptWord(String word)
 	{
 		checkingIfWordContainsSingleBlankSpace(word);
@@ -15,14 +18,14 @@ public class Encriptor {
 		checkingIfWordContainsSingleBlankSpace(word);
 		
 		char[] wordArray = word.toCharArray();
-		String newWord = "";
+		String encryptedWord = EMPTY_SPACE;
 		for (int i = 0; i < word.length(); i++)
 		{
 			int charValue = wordArray[i];
-			newWord += String.valueOf(charValue + 2);
+			encryptedWord += String.valueOf(charValue + 2);
 		}
 		
-		return newWord;
+		return encryptedWord;
 	}
 
 	public String cryptWordReplacingChars(String word, String charsToReplace)
@@ -30,37 +33,37 @@ public class Encriptor {
 		checkingIfWordContainsSingleBlankSpace(word);
 		
 		char[] wordArray = word.toCharArray();
-		char[] replacement = charsToReplace.toCharArray();
-		char[] result = wordArray.clone();
+		char[] charsToReplaceArray = charsToReplace.toCharArray();
+		char[] encryptedWord = wordArray.clone();
 		for (int i = 0; i < wordArray.length; i++)
 		{
-			for (int j = 0; j < replacement.length; j++)
+			for (int j = 0; j < charsToReplaceArray.length; j++)
 			{
-				if (replacement[j] == wordArray[i])
+				if (charsToReplaceArray[j] == wordArray[i])
 				{
 					int charValue = wordArray[i];
-					result[i] = (char)( charValue + 2);		
+					encryptedWord[i] = (char)( charValue + 2);		
 				}
 			}
 		}
-		return String.valueOf(result);
+		return String.valueOf(encryptedWord);
 	}
 	
 	public String cryptSentence(String sentence)
 	{
 		char[] sentenceArray = sentence.toCharArray();
-		String newWord = "";
+		String encryptedSentence = EMPTY_SPACE;
 		for (int i = 0; i < sentence.length(); i++)
 		{
 			int charValue = sentenceArray[i];
-			newWord += String.valueOf((char)( charValue + 2));
+			encryptedSentence += String.valueOf((char)( charValue + 2));
 		}
 		
-		return newWord;
+		return encryptedSentence;
 	}
 	
 	private void checkingIfWordContainsSingleBlankSpace(String word) {
-		if (word.contains(" "))
+		if (word.contains(BLANK_SPACE))
 			throw new InvalidParameterException();
 	}
 	
