@@ -7,16 +7,7 @@ public class Encriptor {
 	public String cryptWord(String word)
 	{
 		checkingIfWordContainsSingleBlankSpace(word);
-		
-		char[] wordArray = word.toCharArray();
-		String newWord = "";
-		for (int i = 0; i < word.length(); i++)
-		{
-			int charValue = wordArray[i];
-			newWord += String.valueOf((char)( charValue + 2));
-		}
-		
-		return newWord;
+		return this.cryptSentence(word);
 	}
 
 	private void checkingIfWordContainsSingleBlankSpace(String word) {
