@@ -15,7 +15,7 @@ public class EncriptorRunnerCharacterizationTest {
 	public void shouldExecuteMainEncriptor() {
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
-		Main.main(null);
+		EncriptorRunner.main(null);
 		assertNotNull(checker.getChecksumValue());
 	}
 	
@@ -23,7 +23,7 @@ public class EncriptorRunnerCharacterizationTest {
 	public void checkingMainOutput(){
 		Checker checker = new Checker();
 		System.setOut(new PrintStream(checker));
-		Main.main(null);
+		EncriptorRunner.main(null);
 		assertEquals(1806523983L, checker.getChecksumValue());
 	}
 
