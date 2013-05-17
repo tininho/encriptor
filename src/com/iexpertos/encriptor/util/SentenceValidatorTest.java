@@ -8,7 +8,8 @@ public class SentenceValidatorTest {
 
 	@Test
 	public void shouldThrowExceptionWhenEmptySentence() {
-		fail("Not yet implemented");
+		SentenceValidator sentenceValidator = new SentenceValidator();
+		sentenceValidator.checkingIfWordContainsSingleBlankSpace("");
 	}
 
 }
