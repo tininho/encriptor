@@ -1,21 +1,26 @@
 package com.iexpertos.encriptor;
 
-import java.security.InvalidParameterException;
+import com.iexpertos.encriptor.util.SentenceValidator;
 
 public class Encriptor {
 	
 	private static final String EMPTY_SPACE = "";
-	private static final String BLANK_SPACE = " ";
+	
+	private SentenceValidator sentenceValidator;
+	
+	public Encriptor(){
+		sentenceValidator = new SentenceValidator();
+	}
 
 	public String cryptWord(String word)
 	{
-		checkingIfWordContainsSingleBlankSpace(word);
+		sentenceValidator.checkingIfWordContainsSingleBlankSpace(word);
 		return this.cryptSentence(word);
 	}
 	
 	public String cryptWordToNumbers(String word)
 	{
-		checkingIfWordContainsSingleBlankSpace(word);
+		sentenceValidator.checkingIfWordContainsSingleBlankSpace(word);
 		
 		char[] wordArray = word.toCharArray();
 		String encryptedWord = EMPTY_SPACE;
@@ -30,7 +35,7 @@ public class Encriptor {
 
 	public String cryptWordReplacingChars(String word, String charsToReplace)
 	{
-		checkingIfWordContainsSingleBlankSpace(word);
+		sentenceValidator.checkingIfWordContainsSingleBlankSpace(word);
 		
 		char[] wordArray = word.toCharArray();
 		char[] charsToReplaceArray = charsToReplace.toCharArray();
@@ -66,11 +71,6 @@ public class Encriptor {
 		}
 		
 		return encryptedSentence;
-	}
-	
-	private void checkingIfWordContainsSingleBlankSpace(String word) {
-		if (word.contains(BLANK_SPACE))
-			throw new InvalidParameterException();
 	}
 	
 }
