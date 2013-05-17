@@ -7,7 +7,7 @@ import org.junit.Test;
 public class SentenceValidatorTest {
 
 	@Test
-	public void test() {
+	public void shouldThrowExceptionWhenEmptySentence() {
 		fail("Not yet implemented");
 	}
 
