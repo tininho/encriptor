@@ -16,12 +16,6 @@ public class SentenceValidatorTest {
 		
 	}
 	
-	@Test(expected=Exception.class)
-	public void shouldThrowExceptionWhenEmptySentence() throws Exception {
-		SentenceValidator sentenceValidator = new SentenceValidator();
-		sentenceValidator.checkingIfWordContainsSingleBlankSpace("");
-	}
-	
 	@Test(expected=InvalidParameterException.class)
 	public void shouldThrowInvalidParameterExceptionWhenEmptySentence() throws InvalidParameterException {
 		SentenceValidator sentenceValidator = new SentenceValidator();
